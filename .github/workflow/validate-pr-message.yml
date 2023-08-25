@@ -1,0 +1,19 @@
+name: Validate PR Message
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  validate_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR Message
+        run: |
+          DESCRIPTION=$(git log -1 --pretty=format:%s ${{ github.event.before }}..${{ github.sha }} | grep -oP '(?<=# 概要\n)(.*?)(?=\n##)')
+          
+          if [ -z "$DESCRIPTION" ]; then
+            echo "Error: PR message is missing Description section"
+            exit 1
+          fi
