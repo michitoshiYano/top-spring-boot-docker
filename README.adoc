@@ -1023,3 +1023,5 @@ Another new project in the container and platform space is https://cloud.google.
 == Closing
 
 This guide has presented a lot of options for building container images for Spring Boot applications. All of them are completely valid choices, and it is now up to you to decide which one you need. Your first question should be "`Do I really need to build a container image?`" If the answer is "`yes,`" then your choices are likely to be driven by efficiency, cacheability, and by separation of concerns. Do you want to insulate developers from needing to know too much about how container images are created? Do you want to make developers responsible for updating images when operating system and middleware vulnerabilities need to be patched? Or maybe developers need complete control over the whole process and they have all the tools and knowledge they need.
+
+TEST!
